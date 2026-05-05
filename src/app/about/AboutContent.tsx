@@ -126,7 +126,7 @@ export default function AboutContent() {
           transition={{ duration: 0.6, delay: 0.25 }}
         >
           <img
-            src="/images/aboutme.png"
+            src="/images/aboutme.jpg"
             alt="Ege Çelikgöğüs"
             style={{
               width: "100%",
