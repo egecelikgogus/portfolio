@@ -162,7 +162,7 @@ export const projects: Project[] = [
     color: "linear-gradient(145deg, #2d1b3d, #1a0f24 50%, #3d2550)",
     coverImage: "/images/radio-biz.jpg",
     video: "/videos/biz_redvideo.mp4",
-    detailVideo: "/videos/radiobiz cd+apple biz black.mp4",
+    detailVideo: "/videos/biz black and white.mp4",
     description:
       "Complete brand identity and website redesign for Radio Biz, a Turkish-German community radio show on Radio Orange 94.0 Vienna. Built from scratch with a fresh visual language inspired by New York's 'Big Apple' energy, positioning Vienna as the next cultural hub.",
     role: "Web Designer & Developer",
