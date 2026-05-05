@@ -444,6 +444,7 @@ export const projects: Project[] = [
     color: "linear-gradient(145deg, #3d1a3d, #240f24 50%, #502a50)",
     thumbnail: "/images/thumbnails/amiai.jpg",
     video: "/videos/amiaicardhov.mov",
+    heroImage: "/images/amiai.jpg",
     description:
       "A speculative design project exploring the blurred lines between AI-generated and original content in the age of fake news. Through provocative visual branding, merchandise, and motion graphics, the project questions authenticity, digital literacy, and how we discern truth in algorithmically mediated realities.",
     role: "Visual Designer (Motion Design & Poster Design)",
@@ -535,6 +536,7 @@ export const projects: Project[] = [
     color: "linear-gradient(145deg, #2d2416, #1a150d 50%, #3d3320)",
     thumbnail: "/images/thumbnails/3drenders.jpg",
     video: "/videos/3d_renders.mp4",
+    heroImage: "/images/renderhero.jpg",
     description:
       "1.5 years of commercial 3D visualization work for ERSA, a B2B/B2C furniture manufacturer. Created photorealistic product renders for catalogs, marketing campaigns, trade show materials, and customer-specific interior scenes — from initial modeling to final high-resolution output.",
     role: "Product Designer & 3D Visualization Artist",
