@@ -90,10 +90,10 @@ export default function Carousel() {
           gap: `${cardGap}px`,
           width: "max-content",
           height: isMobile
-            ? "calc(58vh)"
+            ? "calc(66vh)"
             : "calc(62vh)",
-          minHeight: isMobile ? "260px" : "340px",
-          maxHeight: isMobile ? "400px" : "540px",
+          minHeight: isMobile ? "300px" : "340px",
+          maxHeight: isMobile ? "460px" : "540px",
         }}
       >
         {/* Intro Card */}

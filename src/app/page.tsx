@@ -17,7 +17,7 @@ export default function Home() {
       {/* Spacer - smaller on mobile */}
       <div
         style={{
-          height: "clamp(36px, 10vw, 90px)",
+          height: "clamp(56px, 10vw, 90px)",
           flexShrink: 0,
         }}
       />
