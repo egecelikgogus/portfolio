@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Ege Çelikgöğüs — Product & Interaction Designer",
   description:
     "Portfolio of Ege Çelikgöğüs, a Vienna-based product and interaction designer crafting thoughtful experiences at the intersection of physical and digital.",
+  openGraph: {
+    images: [{ url: "/images/og-image.jpg" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
