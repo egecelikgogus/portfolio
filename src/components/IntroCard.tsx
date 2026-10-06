@@ -161,31 +161,21 @@ export default function IntroCard({
             pointerEvents: "none",
           }}
         >
-          <span
-            style={{
-              alignSelf: "flex-start",
-              fontSize: isMobile ? "12px" : "13px",
-              fontWeight: 600,
-              letterSpacing: "-0.1px",
-              color: "var(--fg)",
-            }}
-          >
-            Ege Çelikgöğüs <span style={{ color: "#F5C542" }}>✴</span>
-          </span>
-
           <p
             style={{
               marginTop: "auto",
-              fontSize: isMobile ? "20px" : "26px",
+              fontSize: isMobile ? "17px" : "22px",
               fontWeight: 600,
-              lineHeight: 1.12,
-              letterSpacing: "-0.5px",
+              lineHeight: 1.18,
+              letterSpacing: "-0.4px",
               color: "var(--fg)",
               textWrap: "balance",
             }}
           >
-            Hi! I&apos;m Ege, a product &amp; interaction designer crafting
-            thoughtful experiences at the intersection of physical and digital.
+            Hi! I&apos;m Ege,
+            <br />
+            a product &amp; interaction designer crafting thoughtful
+            experiences at the intersection of physical and digital.
           </p>
         </div>
       </article>
