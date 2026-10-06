@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import IntroCard from "./IntroCard";
 
 export default function Carousel() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -97,49 +98,7 @@ export default function Carousel() {
         }}
       >
         {/* Intro Card */}
-        <div
-          style={{
-            width: `${cardWidth}px`,
-            flexShrink: 0,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              flex: 1,
-              borderRadius: "6px",
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
-            <img
-              src="/images/ege_profile.jpg"
-              alt="Ege Çelikgöğüs"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-          </div>
-          <div style={{ padding: "10px 2px 0" }}>
-            <p
-              style={{
-                fontSize: isMobile ? "12px" : "14px",
-                fontWeight: 600,
-                color: "var(--fg)",
-                lineHeight: 1.55,
-                letterSpacing: "-0.1px",
-              }}
-            >
-              Hi! I&apos;m Ege, a product &amp; interaction designer
-              crafting thoughtful experiences at the intersection of
-              physical and digital.
-            </p>
-          </div>
-        </div>
+        <IntroCard cardWidth={cardWidth} isMobile={isMobile} />
 
         {/* Project Cards */}
         {projects.filter((p) => !p.hidden).map((project) => (
