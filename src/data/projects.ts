@@ -290,9 +290,8 @@ export const projects: Project[] = [
       { t: "image", src: "/images/intersensa.jpg", alt: "Intersensa interface timeline and 3D viewport", wide: true, caption: "Three zones: 3D body viewport, keyframe timeline, and settings." },
       { t: "section", label: "The design", heading: "Spatial on the left, temporal on the bottom, control on the right.",
         body: "The interface settled into three zones: a <b>3D viewport</b> to place impact on a body model, a <b>timeline</b> to keyframe intensity and timing, and a <b>settings panel</b> for duration and device mapping. The hardest part was blending the viewport with the timeline without overwhelming anyone every element that wasn't self-explanatory got cut." },
-      { t: "grid", cols: 2, items: [
-        { src: "/images/intersensa-2.jpg", alt: "Wireframes and layout exploration" },
-        { src: "/images/intersensa-3.jpg", alt: "High-fidelity UI in the Interhaptics system" }] },
+      { t: "video", src: "/videos/intersensa-processmotion.mp4",
+        alt: "Motion walkthrough of the Intersensa editor: placing an impact on the 3D body, keyframing it on the timeline, and tuning intensity", wide: true },
       { t: "section", label: "Testing · N = 10", heading: "Tested with HCI students via a scenario demo.",
         body: "A workshop with 10 HCI master's students watched three game scenarios a sword cut, approaching footsteps, an explosion then were interviewed and thematically coded. The clearest issue: the <b>timeline didn't communicate changes</b> in impact area and intensity well enough. Those findings drove the final refinements." },
       { t: "stat", items: [
@@ -301,6 +300,7 @@ export const projects: Project[] = [
         { num: "3", cap: "interaction zones" }] },
       { t: "section", label: "Outcome", heading: "Headed to production.",
         body: "Interhaptics planned to produce Intersensa in 2025–2026. By borrowing patterns from tools designers already know audio editors, animation timelines, 3D viewports it lowers the barrier to an emerging technology. Next: real-time device preview and Unity/Unreal integration." },
+      { t: "image", src: "/images/intersensa-2.jpg", alt: "Wireframes and layout exploration", wide: true },
     ],
     sections: [
       {
