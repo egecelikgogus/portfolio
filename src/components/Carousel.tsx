@@ -20,12 +20,25 @@ export default function Carousel() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // Vertical scroll → horizontal movement (desktop only)
+  /* Vertical wheel drives the row sideways, but only while the row still has
+     somewhere to go. At either end the wheel is released so the page keeps
+     scrolling normally — otherwise the footer below the viewport would be
+     unreachable while the cursor is over the cards. (Desktop only.) */
   useEffect(() => {
     const el = scrollRef.current;
     if (!el || isMobile) return;
 
     const handleWheel = (e: WheelEvent) => {
+      // A trackpad's sideways swipe is already horizontal; leave it alone.
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+
+      const max = el.scrollWidth - el.clientWidth;
+      const atStart = el.scrollLeft <= 0;
+      const atEnd = el.scrollLeft >= max - 1;
+      const forward = e.deltaY > 0;
+
+      if ((forward && atEnd) || (!forward && atStart)) return;
+
       e.preventDefault();
       el.scrollLeft += e.deltaY * 2;
     };
