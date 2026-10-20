@@ -216,8 +216,8 @@ export default function ResumeContent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          href="/Ege Celikgögüs_UX:UI Designer_CV.pdf"
-          download="Ege Celikgögüs_CV.pdf"
+          href="/CV_Ege%20Celikgogus.pdf"
+          download="Ege-Celikgogus-CV.pdf"
           style={{
             fontSize: isMobile ? "12px" : "13px",
             fontWeight: 400,

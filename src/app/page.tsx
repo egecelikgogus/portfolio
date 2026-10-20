@@ -1,33 +1,40 @@
 import Navbar from "@/components/Navbar";
 import Carousel from "@/components/Carousel";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   return (
-    <main
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-      }}
-    >
-      <Navbar />
-
-      {/* Spacer - smaller on mobile */}
-      <div
+    <>
+      <main
         style={{
-          height: "clamp(56px, 10vw, 90px)",
-          flexShrink: 0,
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
         }}
-      />
+      >
+        <Navbar />
 
-      {/* Horizontal scroll carousel */}
-      <div style={{ flex: 1, minHeight: 0 }}>
-        <Carousel />
-      </div>
+        {/* Spacer - smaller on mobile */}
+        <div
+          style={{
+            height: "clamp(56px, 10vw, 90px)",
+            flexShrink: 0,
+          }}
+        />
 
-      <ScrollIndicator />
-    </main>
+        {/* Horizontal scroll carousel */}
+        <div style={{ flex: 1, minHeight: 0 }}>
+          <Carousel />
+        </div>
+
+        <ScrollIndicator />
+      </main>
+
+      {/* Outside <main>: it is height:100vh with overflow:hidden, so a footer
+          inside it would shrink the carousel and clip the card captions. */}
+      <SiteFooter />
+    </>
   );
 }

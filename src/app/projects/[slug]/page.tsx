@@ -3,6 +3,8 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 import Navbar from "@/components/Navbar";
 import CaseStudy from "./CaseStudy";
+import BackToProjects from "@/components/BackToProjects";
+import SiteFooter from "@/components/SiteFooter";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -50,6 +52,9 @@ export default function ProjectPage({
           →
         </span>
       </Link>
+
+      <BackToProjects />
+      <SiteFooter />
     </main>
   );
 }

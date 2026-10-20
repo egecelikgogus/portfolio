@@ -93,7 +93,11 @@ export default function Navbar() {
           >
             <NavLink href="/" label="Work" />
             <NavLink href="/about" label="About" />
-            <NavLink href="/resume" label="Resume" />
+            <NavLink
+              href="/CV_Ege%20Celikgogus.pdf"
+              label="Resume"
+              download="Ege-Celikgogus-CV.pdf"
+            />
 
             <button
               onClick={toggleTheme}
@@ -231,8 +235,9 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           />
           <MobileNavLink
-            href="/resume"
+            href="/CV_Ege%20Celikgogus.pdf"
             label="Resume"
+            download="Ege-Celikgogus-CV.pdf"
             onClick={() => setMenuOpen(false)}
           />
           <MobileNavLink
@@ -269,10 +274,20 @@ export default function Navbar() {
   );
 }
 
-function NavLink({ href, label }: { href: string; label: string }) {
+function NavLink({
+  href,
+  label,
+  download,
+}: {
+  href: string;
+  label: string;
+  download?: string;
+}) {
+  const Tag = download ? "a" : Link;
   return (
-    <Link
+    <Tag
       href={href}
+      {...(download ? { download } : {})}
       style={{
         fontSize: "14px",
         color: "var(--fg-muted)",
@@ -288,7 +303,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
       }
     >
       {label}
-    </Link>
+    </Tag>
   );
 }
 
@@ -296,15 +311,19 @@ function MobileNavLink({
   href,
   label,
   onClick,
+  download,
 }: {
   href: string;
   label: string;
   onClick: () => void;
+  download?: string;
 }) {
+  const Tag = download ? "a" : Link;
   return (
-    <Link
+    <Tag
       href={href}
       onClick={onClick}
+      {...(download ? { download } : {})}
       style={{
         fontSize: "28px",
         fontWeight: 300,
@@ -315,6 +334,6 @@ function MobileNavLink({
       }}
     >
       {label}
-    </Link>
+    </Tag>
   );
 }

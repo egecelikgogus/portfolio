@@ -26,6 +26,7 @@
   --title: #6e6eff;
 
   /* Theme-independent */
+  --yellow: #f5c542;
   --radius: 12px;
   --display: 'Inter', system-ui, -apple-system, sans-serif;
   --sp-section: clamp(4rem, 10vw, 7.5rem);
@@ -154,4 +155,41 @@ body {
   html{scroll-behavior:auto}
   .pub,.case-next .arw{transition:none}
   .case-next:hover .arw{transform:none}
+}
+
+
+/* ─────────────────────────────────────────────
+   Back-to-projects CTA + site footer
+   ───────────────────────────────────────────── */
+
+/* Same container as .sec so the button lines up with the case content. */
+.backwrap{max-width:1400px;margin:0 auto;padding:0 var(--margin,5vw) var(--sp-section)}
+.backbtn{display:flex;align-items:center;justify-content:center;gap:.5em;width:100%;
+  padding:2.5rem 1.5rem;border-radius:22px;background:var(--blue);color:#fff;
+  font-family:var(--display);font-weight:800;letter-spacing:-.02em;text-align:center;
+  font-size:clamp(2rem,5vw,3.25rem);line-height:1;text-decoration:none;
+  transition:transform .2s ease,filter .2s ease}
+.backbtn__arrow{color:var(--yellow)}
+.backbtn:hover{transform:translateY(-2px);filter:brightness(.92)}
+.backbtn:active{transform:scale(.99)}
+.backbtn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+.sitefooter{border-top:1px solid var(--line);background:var(--paper)}
+.sitefooter__inner{max-width:1400px;margin:0 auto;
+  padding:clamp(1.5rem,4vw,2.5rem) var(--margin,5vw);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.sitefooter__place,.sitefooter__copy{font-size:.8rem;color:var(--meta)}
+.sitefooter__nav{display:flex;gap:1.25rem}
+.sitefooter__nav a{font-size:.85rem;color:var(--ink);text-decoration:underline;
+  text-underline-offset:3px;transition:color .2s ease}
+.sitefooter__nav a:hover{color:var(--blue)}
+.sitefooter__nav a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+@media (max-width:640px){
+  .sitefooter__inner{flex-direction:column;text-align:center;gap:.75rem}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .backbtn,.sitefooter__nav a{transition:none}
+  .backbtn:hover,.backbtn:active{transform:none}
 }
