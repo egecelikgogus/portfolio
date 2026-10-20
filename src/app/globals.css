@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,6 +13,33 @@
   --fg-dim: #555555;
   --border: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(255, 255, 255, 0.2);
+
+  /* Case-study tokens. The specified palette is the light-theme set (see
+     [data-theme="light"]); these are its dark-theme counterparts, with blue
+     and red lifted for contrast against #111. */
+  --paper: #111111;
+  --ink: #e8e8e4;
+  --meta: #9a9a94;
+  --line: rgba(255, 255, 255, 0.12);
+  --blue: #6e6eff;
+  --red: #ff6a4d;
+  --title: #6e6eff;
+
+  /* Theme-independent */
+  --radius: 12px;
+  --display: 'Inter', system-ui, -apple-system, sans-serif;
+  --sp-section: clamp(4rem, 10vw, 7.5rem);
+  --margin: 5vw;
+}
+
+[data-theme="light"] {
+  --paper: #f5f5f2;
+  --ink: #141414;
+  --meta: #5e5e58;
+  --line: #dcdcd5;
+  --blue: #2a2ae0;
+  --red: #e5341c;
+  --title: #2a2ae0;
 }
 
 [data-theme="light"] {
@@ -58,4 +85,73 @@ body {
 
 [data-theme="light"] ::selection {
   background: rgba(0, 0, 0, 0.15);
+}
+
+/* ─────────────────────────────────────────────
+   Case study template
+   ───────────────────────────────────────────── */
+
+.case{max-width:1400px;margin:0 auto;padding:clamp(2rem,5vw,3rem) var(--margin,5vw) 0}
+.case h1{font-family:var(--display);font-weight:800;letter-spacing:-.03em;font-size:clamp(2.6rem,.9rem + 6vw,5rem);margin:clamp(1.5rem,4vw,2.5rem) 0;color:var(--accent, var(--title));line-height:.98}
+[data-theme="light"] .case h1{color:var(--accent-light, var(--accent, var(--title)))}
+.case-sub{font-family:var(--display);font-weight:600;font-size:clamp(1.1rem,1rem + .7vw,1.5rem);letter-spacing:-.02em;color:var(--ink);margin:-1rem 0 1.5rem;max-width:48ch}
+.case-meta{display:grid;gap:clamp(1.5rem,4vw,3rem);padding-bottom:clamp(2rem,5vw,3rem)}
+@media(min-width:820px){.case-meta{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.mlist{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1rem}
+.mlist .k{font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--meta);margin-bottom:.25rem}
+.mlist .v{font-family:var(--display);font-weight:600;font-size:.92rem;color:var(--ink)}
+.case-intro{font-size:clamp(1.12rem,1rem + .55vw,1.35rem);max-width:56ch;color:var(--ink);line-height:1.5}
+.pubs{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.pub{display:inline-flex;align-items:center;gap:.45rem;font-size:.9rem;border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;color:var(--ink);text-decoration:none;transition:border-color .2s ease,color .2s ease}
+.pub:hover{border-color:var(--blue);color:var(--blue)} .pub .src{color:var(--meta)}
+.pub .note{color:var(--meta);font-size:.8rem}
+.pub:focus-visible,.case-next:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+.sec{padding:0 var(--margin,5vw);max-width:1400px;margin:0 auto}
+.case-hero{position:relative;border-radius:var(--radius);overflow:hidden;margin:0 0 var(--sp-section);background:var(--line)}
+.sblock{display:grid;gap:1rem;max-width:62ch;margin:0 auto var(--sp-section)}
+.slab{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:700}
+.sblock h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,1.1rem + 1.9vw,2.3rem);letter-spacing:-.02em;line-height:1.05;color:var(--ink)}
+.sblock .body{color:var(--meta);font-size:clamp(1.12rem,1rem + .55vw,1.35rem);line-height:1.55}
+.sblock .body b,.sblock .body strong{color:var(--ink);font-weight:600}
+.sblock .body p + p{margin-top:.9em}
+.sblock .rlist{display:grid;gap:.5em;padding-left:1.1em}
+.sblock .rlist li{list-style:square}
+.sblock .rlist li::marker{color:var(--red)}
+
+.cimg{position:relative;border-radius:var(--radius);overflow:hidden;max-width:1000px;margin:0 auto var(--sp-section);background:var(--line)}
+.cimg.wide{max-width:100%}
+.cimg .cap,.case-hero .cap{position:absolute;left:1rem;bottom:.9rem;z-index:2;font-size:.75rem;color:#fff;background:rgba(10,10,20,.55);padding:.25rem .6rem;border-radius:6px;backdrop-filter:blur(2px)}
+.cgrid{display:grid;gap:clamp(.7rem,2vw,1.1rem);max-width:1000px;margin:0 auto var(--sp-section);grid-template-columns:1fr;align-items:start}
+@media(min-width:720px){.cgrid.c2{grid-template-columns:1fr 1fr}.cgrid.c3{grid-template-columns:1fr 1fr 1fr}}
+.cfig{position:relative;border-radius:var(--radius);overflow:hidden;margin:0;background:var(--line)}
+
+/* Images with an alpha channel must show the page through, not the loading
+   plate, so .plain drops the placeholder background. */
+.case-hero.plain,.cimg.plain,.cfig.plain{background:none}
+
+/* Every image publishes at its own aspect ratio: no fixed box, no object-fit,
+   so nothing is cropped or stretched. height:auto follows the real ratio. */
+.case-hero img,.case-hero video,.cimg img,.cimg video,.cfig img{width:100%;height:auto;display:block}
+/* Body videos carry their own alpha; no loading plate behind them. */
+.cvid{background:none}
+
+.stat{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,5vw,4rem);max-width:62ch;margin:0 auto var(--sp-section);padding:2.5rem 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.stat .s{flex:1 1 140px}
+.stat .num{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,1rem + 4vw,3.4rem);letter-spacing:-.02em;color:var(--ink)}
+.stat .num .u{font-size:.45em;font-weight:600;color:var(--meta);letter-spacing:0;margin-left:.08em}
+.stat .cap{font-size:.9rem;color:var(--meta);margin-top:.3rem}
+.cquote{max-width:62ch;margin:0 auto var(--sp-section);font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,1rem + 1.6vw,2rem);line-height:1.22;letter-spacing:-.02em;color:var(--ink)}
+.cquote span{display:block;margin-top:.7rem;font-family:inherit;font-weight:400;font-size:.9rem;color:var(--meta)}
+
+.case-next{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:clamp(2rem,5vw,3.75rem) var(--margin,5vw);border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.case-next .k{display:block;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--meta);margin-bottom:.5rem}
+.case-next h2{font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,1rem + 2vw,2.1rem);letter-spacing:-.02em}
+.case-next .arw{font-size:1.5rem;color:var(--meta);transition:transform .2s ease,color .2s ease}
+.case-next:hover .arw{transform:translateX(4px);color:var(--blue)}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .pub,.case-next .arw{transition:none}
+  .case-next:hover .arw{transform:none}
 }
